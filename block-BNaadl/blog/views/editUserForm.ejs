@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>new user form</h1>
+    <form action="/users/<%= user._id %>/edit" method="POST">
+      <input
+        type="text"
+        placeholder="enter name"
+        name="title"
+        value="<%= user.title  %>"
+      />
+      <input
+        type="text"
+        placeholder="enter description"
+        name="description"
+        value="<%= user.description  %>"
+      />
+      <input
+        type="text"
+        placeholder="enter author"
+        name="author"
+        value="<%= user.author  %>"
+      />
+      <input
+        type="number"
+        placeholder="enter likes"
+        name="likes"
+        value="<%= user.likes  %>"
+      />
+      <input type="submit" value="submit" />
+    </form>
+  </body>
+</html>
