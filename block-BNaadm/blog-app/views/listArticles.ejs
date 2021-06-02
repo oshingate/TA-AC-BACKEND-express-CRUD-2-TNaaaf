@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <header class="">
+      <div class="flex jsb container">
+        <a class="btn btn-pri" href="/articles/">List of Articles</a>
+        <h1>Blog</h1>
+        <a class="btn btn-pri" href="/articles/new">Add new Article</a>
+      </div>
+    </header>
+    <main>
+      <section class="hero-sec">
+        <h2>List of all articles</h2>
+      </section>
+      <section class="container">
+        <div class="list-div">
+          <% articles.forEach(ele=>{ %>
+          <article class="list-article flex jsb">
+            <div>
+              <h3>Title:- <span> <%= ele.title %></span></h3>
+              <h4>Author:- <span><%= ele.author %> </span></h4>
+            </div>
+            <a href="/articles/<%= ele.id  %>" class="btn btn-sec">See More</a>
+          </article>
+          <% }) %>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
