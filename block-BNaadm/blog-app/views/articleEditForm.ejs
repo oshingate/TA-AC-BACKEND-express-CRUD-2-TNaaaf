@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <header class="">
+      <div class="flex jsb container">
+        <a class="btn btn-pri" href="/articles/">List of Articles</a>
+        <h1>Blog</h1>
+        <a class="btn btn-pri" href="/articles/new">Add new Article</a>
+      </div>
+    </header>
+    <main>
+      <section class="hero-sec">
+        <h2>Create new Articles</h2>
+      </section>
+      <section class="newArticle-sec sec-padding container">
+        <div>
+          <form action="/articles/<%= article.id %>/edit" method="POST">
+            <input
+              type="text"
+              placeholder="Enter Title"
+              name="title"
+              value="<%= article.title  %> "
+            />
+            <input
+              type="text"
+              placeholder="Enter Author"
+              name="author"
+              value="<%= article.author  %> "
+            />
+            <input
+              type="number"
+              placeholder="Enter likes"
+              name="likes"
+              value="<%= article.likes  %> "
+            />
+            <textarea name="description" id="description" cols="30" rows="5">
+<%= article.description  %> </textarea
+            >
+            <a href="#"
+              ><button class="btn btn-sec" type="submit">Submit</button></a
+            >
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
