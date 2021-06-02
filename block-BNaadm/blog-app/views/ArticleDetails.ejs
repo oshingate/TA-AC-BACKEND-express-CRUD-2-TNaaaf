@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <header class="">
+      <div class="flex jsb container">
+        <a class="btn btn-pri" href="/articles/">List of Articles</a>
+        <h1>Blog</h1>
+        <a class="btn btn-pri" href="/articles/new">Add new Article</a>
+      </div>
+    </header>
+    <main>
+      <section class="hero-sec">
+        <h2><%= article.title %> Details</h2>
+      </section>
+      <section class="container">
+        <article class="article-card">
+          <h2>title:- <span><%= article.title %></span></h2>
+          <h3>Author:- <%= article.author %></h3>
+          <p>Description:- <%= article.description %></p>
+          <small
+            >likes:- <span><%= article.likes %></span>
+            <a
+              class="btn btn-pri"
+              href="/articles/<%= article.id  %>/likes/increment"
+              >Increment</a
+            >
+            <a
+              class="btn btn-sec"
+              href="/articles/<%= article.id  %>/likes/decrement"
+              >Decrement</a
+            ></small
+          >
+          <div class="btn-div">
+            <a class="btn btn-pri" href="/articles/<%= article.id  %>/edit"
+              >Edit</a
+            >
+            <a class="btn btn-sec" href="/articles/<%= article.id  %>/delete"
+              >Delete</a
+            >
+          </div>
+        </article>
+      </section>
+
+      <section class="commentForm-sec sec-padding container">
+        <div>
+          <form action="/articles/<%= article.id %>/comment" method="POST">
+            <label for="content">Type new comment here:-</label>
+            <input type="text" class="Enter Comment" name="content" />
+            <a href="#"
+              ><button class="btn btn-pri" type="submit">Submit</button></a
+            >
+          </form>
+        </div>
+      </section>
+
+      <section class="comment-sec container sec-padding">
+        <h4>Comments:-</h4>
+        <div class="comment-card-div">
+          <% comments.forEach(ele=>{ %>
+          <article class="comment-card flex jsb">
+            <div>
+              <h3><%= ele.content %></h3>
+              <small>Likes:- <%= ele.likes %> </small>
+            </div>
+            <div>
+              <a href="/comments/<%= ele.id %>/edit" class="btn btn-pri">
+                Edit</a
+              >
+              <a href="/comments/<%= ele.id %>/delete" class="btn btn-sec">
+                Delete</a
+              >
+            </div>
+          </article>
+          <% }) %>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
