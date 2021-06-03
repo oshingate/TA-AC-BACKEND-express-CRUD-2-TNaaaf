@@ -25,8 +25,6 @@ Q. Create an Online bookstore where you can display a list of books.
 
 Design thier models and associate in such a way that you should be able to list books
 
-1. using book name
-2. using author name
 3. using category
 
 Create webpages to add above features into the application.
